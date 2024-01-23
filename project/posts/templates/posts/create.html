@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Создание поста
+{% endblock %}
+
+
+{% block content %}
+
+<div class="features">
+    <h1>Создание поста</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Тема поста" class="form-control"><br>
+        <input type="text" placeholder="Назначение поста(ресурс для которого предназначается пост)"
+            class="form-control"><br>
+        <input type="date" class="form-control"><br>
+        <input type="checkbox" name="is_link" id="is_link">
+        <label for="is_link">Есть ссылка в посте?</label>
+        <input type="checkbox" name="is_shkn" id="is_shkn">
+        <label for="is_shkn">Есть ШКН в названии?</label>
+        <button class="btn btn-success" type="submit">Создать пост</button>
+    </form>
+
+</div>
+
+{% endblock %}

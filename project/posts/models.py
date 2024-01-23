@@ -9,7 +9,7 @@ class Posts(models.Model):
     appointment = models.CharField('Назначение', max_length=50)
 
     def __str__(self):
-        return f'${self.theme}:${self.appointment}'
+        return f'{self.theme}:{self.appointment}'
     
     class Meta:
         verbose_name='Пост'

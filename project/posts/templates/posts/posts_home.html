@@ -8,14 +8,18 @@
 {% block content %}
 
 <div class="features">
-    <h1>{{ title }}</h1>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore nesciunt
-        nam excepturi, quam magnam harum quidem quo voluptas culpa omnis veritatis
-        dignissimos vitae iusto architecto temporibus odio molestiae nobis!
-        Corporis!
-    </p>
-    <button class="btn btn-warning">На страницу про нас</button>
+    <h1>Посты</h1>
+    {% if posts %}
+    {% for el in posts %}
+    <div class="alert alert-warning">
+        <h3>{{el.theme}}</h3>
+        <p>{{el.date}}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>Нет созданных постов</p>
+    {% endif %}
+
 </div>
 
 {% endblock %}
