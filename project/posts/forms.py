@@ -1,5 +1,5 @@
 from .models import Posts
-from django.forms import ModelForm, TextInput, DateInput, CheckboxInput, BooleanField, CheckboxSelectMultiple
+from django.forms import ModelForm, TextInput, DateInput, CheckboxInput
 
 class PostsForm(ModelForm):
     class Meta:

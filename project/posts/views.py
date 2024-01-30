@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Posts
 from .forms import PostsForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 # Create your views here.
@@ -14,13 +14,24 @@ class PostsDetailView(DetailView):
     template_name = 'posts/detail_view.html'
     context_object_name = 'post'
 
+class PostsUpdateView(UpdateView):
+    model = Posts
+    template_name = 'posts/create.html'
+
+    form_class = PostsForm
+
+class PostsDeleteView(DeleteView):
+    model = Posts
+    success_url = '/posts/'
+    template_name = 'posts/posts_delete.html'
+
 def create(request):
     error = ''
     if request.method == "POST":
         form = PostsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('/posts/')
         else:
             error = 'Форма некорректно заполнена'
 
