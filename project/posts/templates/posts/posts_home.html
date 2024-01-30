@@ -10,12 +10,32 @@
 <div class="features">
     <h1>Посты</h1>
     {% if posts %}
-    {% for el in posts %}
-    <div class="alert alert-warning">
-        <h3>{{el.theme}}</h3>
-        <p>{{el.date}}</p>
-    </div>
-    {% endfor %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Theme</th>
+                <th>Выбор</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in posts %}
+            <!-- <div class="alert alert-warning">
+                <h3>{{el.theme}}</h3>
+                <p>{{el.date}}</p>
+            </div> -->
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{el.date}}</td>
+                <td>{{el.theme}}</td>
+                <td><input type="checkbox" name="item" value="{{forloop.counter}}"></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
     {% else %}
     <p>Нет созданных постов</p>
     {% endif %}
