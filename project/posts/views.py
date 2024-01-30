@@ -1,11 +1,18 @@
 from django.shortcuts import render, redirect
 from .models import Posts
 from .forms import PostsForm
+from django.views.generic import DetailView
+
 
 # Create your views here.
 def posts_home(request):
     posts = Posts.objects.order_by('date')
     return render(request, 'posts/posts_home.html', {'posts' : posts})
+
+class PostsDetailView(DetailView):
+    model = Posts
+    template_name = 'posts/detail_view.html'
+    context_object_name = 'post'
 
 def create(request):
     error = ''

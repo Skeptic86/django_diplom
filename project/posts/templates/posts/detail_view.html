@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Пост:{{post.id}}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="features">
+    <h1>{{ post.theme }}</h1>
+    <h2>{{post.date}}</h2>
+
+
+</div>
+
+{% endblock %}

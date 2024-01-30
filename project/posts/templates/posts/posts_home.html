@@ -26,10 +26,10 @@
                 <p>{{el.date}}</p>
             </div> -->
             <tr>
-                <td>{{forloop.counter}}</td>
+                <td>{{el.id}}</td>
                 <td>{{el.date}}</td>
                 <td>{{el.theme}}</td>
-                <td><input type="checkbox" name="item" value="{{forloop.counter}}"></td>
+                <td><input type="checkbox" name="item" value="{{el.id}}"></td>
             </tr>
             {% endfor %}
 
