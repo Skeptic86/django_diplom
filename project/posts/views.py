@@ -42,3 +42,8 @@ def create(request):
         'error': error
     }
     return render(request, 'posts/create.html', data)
+
+
+
+
+

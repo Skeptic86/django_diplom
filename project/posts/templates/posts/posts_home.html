@@ -21,15 +21,12 @@
         </thead>
         <tbody>
             {% for el in posts %}
-            <!-- <div class="alert alert-warning">
-                <h3>{{el.theme}}</h3>
-                <p>{{el.date}}</p>
-            </div> -->
             <tr>
                 <td>{{el.id}}</td>
                 <td>{{el.date}}</td>
                 <td>{{el.theme}}</td>
                 <td><input type="checkbox" name="item" value="{{el.id}}"></td>
+                <td><a href="{% url 'delete' el.id %}">Удалить</a></td>
 
             </tr>
             {% endfor %}
