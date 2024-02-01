@@ -17,7 +17,7 @@ class PostsDetailView(DetailView):
 class PostsUpdateView(UpdateView):
     model = Posts
     template_name = 'posts/create.html'
-
+    success_url = '/posts/'
     form_class = PostsForm
 
 class PostsDeleteView(DeleteView):

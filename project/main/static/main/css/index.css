@@ -88,8 +88,33 @@ table {
 }
 
 th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/* Стили для иконок */
+.fa-times {
+  color: #eb5959;
+  text-decoration: none;
+}
+
+.fa-times:hover {
+  color: red;
+}
+
+.fa-pencil-alt {
+  color: cadetblue;
+  text-decoration: none;
+}
+
+.fa-pencil-alt:hover {
+  color: blue;
+}
+
+.fa-plus {
+  color: #033e6b;
+  margin-right: 3px;  
+  text-decoration: none;
 }
 
