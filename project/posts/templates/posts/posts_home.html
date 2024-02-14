@@ -19,20 +19,23 @@
                 <th>Выбор</th>
             </tr>
         </thead>
-        <tbody>
-            {% for el in posts %}
-            <tr>
-                <td>{{el.id}}</td>
-                <td>{{el.date}}</td>
-                <td>{{el.theme}}</td>
-                <td><input type="checkbox" name="item" value="{{el.id}}"></td>
-                <td><a href="{% url 'posts_delete' el.id %}" class="icon"><i class="fas fa-times"></i></a></td>
-                <td><a href="{% url 'posts_update' el.id %}" class="icon"><i class="fas fa-pencil-alt"></i></a></td>
+        <form method="POST" action="{% url 'model_page' %}">
+            {% csrf_token %}
+            <tbody>
+                {% for el in posts %}
+                <tr>
+                    <td>{{ el.id }}</td>
+                    <td>{{ el.date }}</td>
+                    <td>{{ el.theme }}</td>
+                    <td><input type="checkbox" name="selected_items" value="{{ el.id }}"></td>
+                    <td><a href="{% url 'posts_delete' el.id %}" class="icon"><i class="fas fa-times"></i></a></td>
+                    <td><a href="{% url 'posts_update' el.id %}" class="icon"><i class="fas fa-pencil-alt"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <input type="submit" value="Отправить">
+        </form>
 
-            </tr>
-            {% endfor %}
-
-        </tbody>
     </table>
 
     {% else %}

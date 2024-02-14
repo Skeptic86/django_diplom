@@ -5,6 +5,15 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 # Create your views here.
+
+def model_page(request):
+    if request.method == "POST":
+        selected_items_ids = request.POST.getlist('selected_items')
+        selected_posts = Posts.objects.filter(id__in=selected_items_ids)
+        return render(request, 'posts/model_page.html', {'selected_posts': selected_posts})
+    else:
+        return redirect('posts_home')  # Или другая логика для GET-запроса
+
 def posts_home(request):
     posts = Posts.objects.order_by('date')
     return render(request, 'posts/posts_home.html', {'posts' : posts})

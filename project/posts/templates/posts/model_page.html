@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Результат
+{% endblock %}
+
+
+{% block content %}
+
+{% for post in selected_posts %}
+<p>ID: {{ post.id }} - Дата: {{ post.date }} - Тема: {{ post.theme }}</p>
+{% endfor %}
+
+
+{% endblock %}
