@@ -17,14 +17,11 @@
     <img src="{% static 'main/img/tgu_logo.png' %}" alt="logo" />
     <span class="logo">ТюмГУ</span>
     <ul>
+        <a href="{% url 'home' %}">
+            <li>Главная</li>
+          </a>
       <a href="{% url 'posts_home' %}">
         <li>Созданные посты</li>
-      </a>
-      <a href="{% url 'home' %}">
-        <li>Главная</li>
-      </a>
-      <a href="{% url 'about' %}">
-        <li>О нас</li>
       </a>
       <a href="{% url 'create' %}">
         <li></i><button class="btn btn-info"><i class="fas fa-plus"></i>Добавить пост</button></li>
